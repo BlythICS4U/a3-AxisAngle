@@ -2,6 +2,10 @@ package tictactoe;
 
 import java.util.Scanner;
 
+/**
+ * 
+ * @author bachle
+ */
 public class TicTacToeRunner {
 
     public static void main(String[] args) {
@@ -12,11 +16,12 @@ public class TicTacToeRunner {
         int r, c;
 
         while (!(ttt.isWinner('X') || ttt.isWinner('O') || ttt.isFull())) {
+            if(p == 'X'){
             ttt.displayBoard();
             System.out.print("'" + p + "', choose your location (i.e. 0 0): ");
             r = keyboard.nextInt();
             c = keyboard.nextInt();
-
+            
             while (ttt.isValid(r, c) == false || ttt.playerAt(r, c) != ' ') {
                 if (ttt.isValid(r, c) == false) {
                     System.out.println("That is not a valid location. Try again.");
@@ -28,9 +33,13 @@ public class TicTacToeRunner {
                 r = keyboard.nextInt();
                 c = keyboard.nextInt();
             }
-
             ttt.playMove(p, r, c);
-
+            }
+            else
+            {
+                ttt.displayBoard();
+                TicTacToeAI.AIPlayMove(ttt);
+            }
             if (p == 'X') {
                 p = 'O';
             } else {

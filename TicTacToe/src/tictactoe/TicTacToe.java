@@ -1,10 +1,16 @@
 package tictactoe;
 
 public class TicTacToe {
-    
+
     private char[][] board;
 
     // Constructors
+    /**
+     * the default constructor, which just creates the two-dimensional array and
+     * fills each slot with ' ' (a blank space) and initializes the other
+     * attributes
+     *
+     */
     public TicTacToe() {
         board = new char[3][3];
 
@@ -14,31 +20,92 @@ public class TicTacToe {
             }
         }
     }
-
+ 
     // Accessor Methods
+    /**
+     * returns true if the letter passed in currently has three in a row. That
+     * is, isWinner('X') will return true if X has won, and isWinner('O') will
+     * return true if O has won
+     *
+     * @param p
+     * @return
+     */
     public boolean isWinner(char p) {
         // I NEED A REAL IMPLEMENTATION!!!!!!
+        for (int i = 0; i < 3; i++) {
+            if (board[i][0] == p && board[i][1] == p && board[i][2] == p) {
+                return true;
+            }
+            if (board[0][i] == p && board[1][i] == p && board[2][i] == p) {
+                return true;
+            }
+        }
+        if (board[0][0] == p && board[1][1] == p && board[2][2] == p) {
+            return true;
+        }
+        if (board[0][2] == p && board[1][1] == p && board[2][0] == p) {
+            return true;
+        }
         return false;
     }
-
+    /**
+     * returns true if nine turns have been played and false otherwise
+     *
+     * @return
+     */
     public boolean isFull() {
         // I NEED A REAL IMPLEMENTATION!!!!!!
-        return false;
+        for(int r = 0; r < 3; r++)
+       {
+           for(int c = 0; c < 3; c++)
+           {
+               if(board[r][c] == ' ')
+               {
+                   return false;
+               }
+           }
+       }
+        return true;
     }
 
+    /**
+     * returns true if all nine spaces are filled AND neither X nor O has won
+     *
+     * @return
+     */
     public boolean isCat() {
         // I NEED A REAL IMPLEMENTATION!!!!!!
+        if(isFull() == true)
+        {
+            if(!isWinner('X') || !isWinner('O') == false) {
+                return true;
+            }  
+        }
         return false;
     }
 
+    /**
+     * returns true if the given row and column corresponds to a valid space on
+     * the board
+     *
+     * @param r
+     * @param c
+     * @return 
+     */
     public boolean isValid(int r, int c) {
         if (0 <= r && r <= 2 && 0 <= c && c <= 2) {
             return true;
         } else {
-            return false;
+                return false;
         }
     }
-
+/**
+ * returns the character representing the piece at the given location. Should return either ' ', 'X', or 'O'.
+ * 
+ * @param r 
+ * @param c
+ * @return 
+ */
     public char playerAt(int r, int c) {
         if (isValid(r, c)) {
             return board[r][c];
@@ -46,7 +113,9 @@ public class TicTacToe {
             return '@';
         }
     }
-
+    /**
+     * displays the current board on the screen
+     */
     public void displayBoard() {
         System.out.println("  0  " + board[0][0] + "|" + board[0][1] + "|" + board[0][2]);
         System.out.println("    --+-+--");
@@ -57,8 +126,17 @@ public class TicTacToe {
     }
 
     // Modifiers
+    /**
+     * allows the given player to place their move at the given row and column. The row and
+     * column numbers are 0-based, so valid numbers are 0, 1, or 2
+     * 
+     * @param p
+     * @param r
+     * @param c 
+     */
     public void playMove(char p, int r, int c) {
         // I NEED A REAL IMPLEMENTATION!!!!!!
+        board[r][c] = p;
     }
 
 }
