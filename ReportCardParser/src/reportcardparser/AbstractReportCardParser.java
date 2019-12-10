@@ -9,6 +9,6 @@ package reportcardparser;
  *
  * @author bachle
  */
-public class ReportCardStatsTest {
+public abstract class AbstractReportCardParser {
     
 }
