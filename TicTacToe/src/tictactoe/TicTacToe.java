@@ -35,7 +35,6 @@ public class TicTacToe {
      * @return Boolean that is false or true depending if p is winner
      */
     public boolean isWinner(char p) {
-        // I NEED A REAL IMPLEMENTATION!!!!!!
         for (int i = 0; i < 3; i++) {
             //Check horizontal
             if (board[i][0] == p && board[i][1] == p && board[i][2] == p) {
@@ -64,7 +63,6 @@ public class TicTacToe {
      * @return
      */
     public boolean isFull() {
-        // I NEED A REAL IMPLEMENTATION!!!!!!
         for (int r = 0; r < 3; r++) {
             for (int c = 0; c < 3; c++) {
                 if (board[r][c] == ' ') {
@@ -81,11 +79,7 @@ public class TicTacToe {
      * @return Boolean 
      */
     public boolean isCat() {
-        // I NEED A REAL IMPLEMENTATION!!!!!!
-        if (isFull() && !isWinner('X') && !isWinner('O')) {
-            return true;
-        }
-        return false;
+        return (isFull() && !isWinner('X') && !isWinner('O'));
     }
 
     /**
@@ -142,7 +136,6 @@ public class TicTacToe {
      * @param c
      */
     public void playMove(char p, int r, int c) {
-        // I NEED A REAL IMPLEMENTATION!!!!!!
         board[r][c] = p;
     }
 }
