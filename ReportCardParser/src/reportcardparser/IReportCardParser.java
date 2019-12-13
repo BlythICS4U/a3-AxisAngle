@@ -8,7 +8,7 @@ package reportcardparser;
 /**
  * Interface defining the public API required by all report card parser classes
  * 
- * @author chris
+ * @author bachle
  */
 public interface IReportCardParser {
     /**

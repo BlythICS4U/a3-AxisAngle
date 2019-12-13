@@ -8,7 +8,7 @@ package reportcardparser;
 /**
  * Class representing a student's report card
  * 
- * @author chris
+ * @author bachle
  */
 public class ReportCard {
     private String name;

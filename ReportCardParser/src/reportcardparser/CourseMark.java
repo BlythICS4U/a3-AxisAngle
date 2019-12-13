@@ -8,7 +8,7 @@ package reportcardparser;
 /**
  * Class used to store a single mark earned by a student in a particular course
  * 
- * @author chris
+ * @author bachle
  */
 public class CourseMark {
     private String name; // Stores the name of the course

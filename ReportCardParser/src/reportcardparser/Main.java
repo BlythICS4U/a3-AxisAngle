@@ -8,7 +8,7 @@ package reportcardparser;
 /**
  * Main class
  * 
- * @author chris
+ * @author bachle
  */
 public class Main {
     
@@ -47,7 +47,6 @@ public class Main {
         for (ReportCard reportCard : reportCards) {
             System.out.println("Best subject for " + reportCard.getName() + " is " + ReportCardStats.GetBestSubject(reportCard));
         }
-
         System.out.println("Average mark for English is " + ReportCardStats.SubjectAverage(reportCards, "English"));
         System.out.println("Average mark for Physics is " + ReportCardStats.SubjectAverage(reportCards, "Physics"));
         System.out.println("Average mark for Computer Science is " + ReportCardStats.SubjectAverage(reportCards, "Computer Science"));
